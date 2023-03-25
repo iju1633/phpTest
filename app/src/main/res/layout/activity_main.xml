@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:conhint=".MainActivity">
+
+    <EditText
+        android:id="@+id/patient_PH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="환자 전화번호"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="254dp" />
+
+    <EditText
+        android:id="@+id/consultant_PH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="상담사 전화번호"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="534dp" />
+
+    <Button
+        android:id="@+id/getUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User_Info"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="653dp" />
+
+    <EditText
+        android:id="@+id/Patient_HP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="환자 전화번호"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="594dp" />
+
+    <EditText
+        android:id="@+id/Patient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="환자명"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <EditText
+        android:id="@+id/Patient_idx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="환자 고유 id"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <EditText
+        android:id="@+id/UserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="환자 이메일"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <EditText
+        android:id="@+id/Favorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="관심 항목"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <EditText
+        android:id="@+id/Contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="상담 내용"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <EditText
+        android:id="@+id/Consultant_HP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="상담사 번호"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <Button
+        android:id="@+id/saveConsultationContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save_consultation_content"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="652dp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="결과창" />
+
+</LinearLayout>
