@@ -49,13 +49,6 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.result);
         result.setMovementMethod(new ScrollingMovementMethod());
 
-        getUserInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
         // 전화 왔을 때를 가정해서 유저 정보 조회
         getUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                         try {
 
                             JSONObject jsonObject = new JSONObject(response.replaceAll("<br>", ""));
+
+                            // "" 안의 name에 해당하는 부분은 바꿔선 안됨
+                            // TODO: 이 부분을 가공하여 상담 이력 리스트(recyclerView에 보여주면 됨)
                             int idx = jsonObject.getInt("idx");
                             String userName = jsonObject.getString("userName");
                             JSONArray consultingList = jsonObject.getJSONArray("consultingList");
@@ -141,9 +137,9 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
 
-                            // 화면에 결과 보여줌
+                            // 화면에 결과 보여줌 -> db에 담긴 내용은 myadmin에서 확인할 것
                             if (success) {
-                                result.setText("요청 성공");
+                                result.setText("요청 성공"); // result textView에 보일 내용
                             } else
                                 result.setText("요청 실패");
 
