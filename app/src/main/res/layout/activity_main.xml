@@ -117,6 +117,7 @@
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
         android:hint="결과창" />
 
 </LinearLayout>

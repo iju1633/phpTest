@@ -24,14 +24,14 @@ public class SaveConsultationContentRequest extends StringRequest {
     final static private String URL = "http://pipecoding.dothome.co.kr/saveConsultationContent.php";
     private Map<String, String> map;
 
-    public SaveConsultationContentRequest(String Patient_HP, String Patient, String Patient_idx, String UserEmail, String Favorites, String Contents, String Consultant_HP, Response.Listener<String> listener) {
+    public SaveConsultationContentRequest(String Patient_HP, String Patient, String Patient_idx, String Patient_Email, String Favorites, String Contents, String Consultant_HP, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
         map.put("Patient_HP", Patient_HP);
         map.put("Patient", Patient);
         map.put("Patient_idx", Patient_idx);
-        map.put("UserEmail", UserEmail);
+        map.put("Patient_Email", Patient_Email);
         map.put("Favorites", Favorites);
         map.put("Contents", Contents);
         map.put("Consultant_HP", Consultant_HP);

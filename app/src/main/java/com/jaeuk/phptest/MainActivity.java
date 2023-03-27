@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         saveConsultationContent = findViewById(R.id.saveConsultationContent);
 
         result = findViewById(R.id.result);
+        result.setMovementMethod(new ScrollingMovementMethod());
 
         getUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,23 +70,43 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String idx = jsonObject.getString("idx");
-                            String userName = jsonObject.getString("userName");
-                            JSONArray consultingList = jsonObject.getJSONArray("consultingList");
-                            StringBuilder sb = new StringBuilder();
-                            for (int i = 0; i < consultingList.length(); i++) {
-                                String value = consultingList.getString(i);
-                                sb.append(value);
-                            }
-                            String consultingContents = sb.toString();
 
-                            // 화면에 결과 보여줌
-                            result.setText("idx : " + idx + "\n" +
-                                    "userName : " + userName + "\n" +
-                                    "consultingContents : " + consultingContents);
+                            result.setText(response);
 
-                        } catch (JSONException e) {
+//                            JSONObject jsonObject = new JSONObject(response.replaceAll("<br>", ""));
+//                            int idx = jsonObject.getInt("idx");
+//                            String userName = jsonObject.getString("userName");
+//                            JSONArray consultingList = jsonObject.getJSONArray("consultingList");
+//                            StringBuilder sb = new StringBuilder();
+//                            for (int i = 0; i < consultingList.length(); i++) {
+//                                JSONObject consulting = consultingList.getJSONObject(i);
+//                                String patient = consulting.getString("Patient");
+//                                String patientIdx = consulting.getString("Patient_idx");
+//                                String patientHP = consulting.getString("Patient_HP");
+//                                String jiJum = consulting.getString("JiJum");
+//                                String subject = consulting.getString("Subject");
+//                                String contents = consulting.getString("Contents");
+//                                String favorites = consulting.getString("Favorites");
+//                                String writeDate = consulting.getString("WriteDate");
+//                                String regDate = consulting.getString("RegDate");
+//                                sb.append("Patient : " + patient + "\n" +
+//                                        "Patient_idx : " + patientIdx + "\n" +
+//                                        "Patient_HP : " + patientHP + "\n" +
+//                                        "JiJum : " + jiJum + "\n" +
+//                                        "Subject : " + subject + "\n" +
+//                                        "Contents : " + contents + "\n" +
+//                                        "Favorites : " + favorites + "\n" +
+//                                        "WriteDate : " + writeDate + "\n" +
+//                                        "RegDate : " + regDate + "\n\n");
+//                            }
+//                            String consultingContents = sb.toString();
+//
+//                            // 화면에 결과 보여줌
+//                            result.setText("idx : " + idx + "\n" +
+//                                    "userName : " + userName + "\n\n" +
+//                                    "Consulting List : \n" + consultingContents);
+
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
