@@ -43,14 +43,13 @@ public class UserInfoRequest extends StringRequest {
 
     private Map<String, String> map;
 
-    public UserInfoRequest(String patient_HP, String consultant_HP, Response.Listener<String> listener) {
+    public UserInfoRequest(String patient_HP, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
 
         // "" 안에 들어있는 내용은 바뀌어선 안됨
         map.put("patient_HP", patient_HP);
-        map.put("consultant_HP", consultant_HP);
     }
 
     @Override

@@ -17,16 +17,6 @@
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="254dp" />
 
-    <EditText
-        android:id="@+id/consultant_PH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="상담사 전화번호"
-        android:inputType="none"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="534dp" />
-
     <Button
         android:id="@+id/getUserInfo"
         android:layout_width="wrap_content"
@@ -54,16 +44,6 @@
         android:inputType="none"
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="479dp" />
-
-    <EditText
-        android:id="@+id/Patient_idx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="환자 고유 id"
-        android:inputType="none"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="309dp" />
 
     <EditText
         android:id="@+id/UserEmail"

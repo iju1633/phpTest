@@ -38,7 +38,7 @@ public class SaveConsultationContentRequest extends StringRequest {
 
     private Map<String, String> map;
 
-    public SaveConsultationContentRequest(String Patient_HP, String Patient, String Patient_idx, String Patient_Email, String Favorites, String Contents, String Consultant_HP, Response.Listener<String> listener) {
+    public SaveConsultationContentRequest(String Patient_HP, String Patient, String Patient_Email, String Favorites, String Contents, String Consultant_HP, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -46,7 +46,6 @@ public class SaveConsultationContentRequest extends StringRequest {
         // "" 안에 들어있는 내용은 바뀌어선 안됨
         map.put("Patient_HP", Patient_HP);
         map.put("Patient", Patient);
-        map.put("Patient_idx", Patient_idx);
         map.put("Patient_Email", Patient_Email);
         map.put("Favorites", Favorites);
         map.put("Contents", Contents);

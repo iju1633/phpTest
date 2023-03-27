@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText patient_PH, consultant_PH;
+    private EditText patient_PH;
     private EditText Patient_HP, Patient, Patient_idx, UserEmail, Favorites, Contents, Consultant_HP;
     private Button getUserInfo, saveConsultationContent;
     private TextView result;
@@ -33,11 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 아이디 값 찾아주기
         patient_PH = findViewById(R.id.patient_PH);
-        consultant_PH = findViewById(R.id.consultant_PH);
 
         Patient_HP = findViewById(R.id.Patient_HP);
         Patient = findViewById(R.id.Patient);
-        Patient_idx = findViewById(R.id.Patient_idx);
         UserEmail = findViewById(R.id.UserEmail);
         Favorites = findViewById(R.id.Favorites);
         Contents = findViewById(R.id.Contents);
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "환자 정보 요청", Toast.LENGTH_SHORT).show();
                 // EditText에 현재 입력된 값을 가져온다.
                 String patient_ph = patient_PH.getText().toString();
-                String consultant_ph = consultant_PH.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @SuppressLint("SetTextI18n")
@@ -68,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
                             // "" 안의 name에 해당하는 부분은 바꿔선 안됨
                             // TODO: 이 부분을 가공하여 상담 이력 리스트(recyclerView에 보여주면 됨)
-                            int idx = jsonObject.getInt("idx");
                             String userName = jsonObject.getString("userName");
                             JSONArray consultingList = jsonObject.getJSONArray("consultingList");
                             StringBuilder sb = new StringBuilder();
@@ -96,18 +93,17 @@ public class MainActivity extends AppCompatActivity {
                             String consultingContents = sb.toString();
 
                             // 화면에 결과 보여줌
-                            result.setText("idx : " + idx + "\n" +
-                                    "userName : " + userName + "\n\n" +
-                                    "Consulting List : \n" + consultingContents);
+                            result.setText("userName : " + userName + "\n\n" +
+                                           "Consulting List : \n" + consultingContents);
 
-                        } catch (Exception e) {
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 };
 
                 // 서버로 Volley를 활용하여 요청
-                UserInfoRequest userInfoRequest = new UserInfoRequest(patient_ph, consultant_ph, responseListener);
+                UserInfoRequest userInfoRequest = new UserInfoRequest(patient_ph, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 queue.add(userInfoRequest);
             }
@@ -123,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
                 // EditText에 현재 입력된 값을 가져온다.
                 String patientHP = Patient_HP.getText().toString();
                 String patient = Patient.getText().toString();
-                String patientIdx = Patient_idx.getText().toString();
                 String userEmail = UserEmail.getText().toString();
                 String favorites = Favorites.getText().toString();
                 String contents = Contents.getText().toString();
@@ -134,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
+                            Log.d("response", "onResponse: " + response);
+
+                            JSONObject jsonObject = new JSONObject(response.replaceAll("<br>", ""));
                             boolean success = jsonObject.getBoolean("success");
 
                             // 화면에 결과 보여줌 -> db에 담긴 내용은 myadmin에서 확인할 것
@@ -143,14 +140,14 @@ public class MainActivity extends AppCompatActivity {
                             } else
                                 result.setText("요청 실패");
 
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
                 };
 
                 // 서버로 Volley를 활용하여 요청
-                SaveConsultationContentRequest saveConsultationContentRequest = new SaveConsultationContentRequest(patientHP, patient, patientIdx, userEmail, favorites, contents, consultantPH, responseListener);
+                SaveConsultationContentRequest saveConsultationContentRequest = new SaveConsultationContentRequest(patientHP, patient, userEmail, favorites, contents, consultantPH, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 queue.add(saveConsultationContentRequest);
             }
