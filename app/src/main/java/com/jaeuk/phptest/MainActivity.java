@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "환자 정보 요청", Toast.LENGTH_SHORT).show();
                 // EditText에 현재 입력된 값을 가져온다.
-                String patient_ph = patient_PH.getText().toString();
+                String patient_ph = patient_PH.getText().toString(); // TODO: 전화 수신 시 sharedPreference 혹은 변수로 저장하고 있다가 기입할 것
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @SuppressLint("SetTextI18n")
@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
                 result.setText("요청 들어옴");
 
                 // EditText에 현재 입력된 값을 가져온다.
-                String patientHP = Patient_HP.getText().toString();
+                String patientHP = Patient_HP.getText().toString(); // TODO: 전화 수신 시 sharedPreference 혹은 변수로 저장하고 있다가 기입할 것
                 String patient = Patient.getText().toString();
                 String userEmail = UserEmail.getText().toString();
                 String favorites = Favorites.getText().toString();
                 String contents = Contents.getText().toString();
-                String consultantPH = Consultant_HP.getText().toString();
+                String consultantPH = Consultant_HP.getText().toString(); // TODO: 안드로이드 기기의 번호를 추출해서 기입할 것
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
