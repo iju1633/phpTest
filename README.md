@@ -31,8 +31,8 @@
 ### DB 확인 방법
 
 - http://pipecoding.dothome.co.kr/myadmin/index.php?route=/ 에 접속합니다.  
-- password를 입력합니다 (pwd : PIPE2023!)  
-<img width="1416" alt="로그인 화면" src="https://user-images.githubusercontent.com/43805087/228558359-0b2b5ff4-2efb-4cb9-b4e9-3ed96cdc3aa6.png">
+- PM에게 전달받은 password를 입력합니다
+<img width="1429" alt="스크린샷 2023-03-29 오후 10 57 40" src="https://user-images.githubusercontent.com/43805087/228561775-cf649df1-8107-4e23-b407-2b2ee61a0898.png">
 - pipecoding 스키마를 클릭합니다.  
 <img width="1425" alt="로그인 성공 화면" src="https://user-images.githubusercontent.com/43805087/228558404-71044be3-d279-4329-af21-7b6ff76c7592.png">
 - 테이블을 눌러보며 데이터를 확인합니다.  
