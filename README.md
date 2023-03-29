@@ -6,9 +6,9 @@
   - 환자의 이름과 상담 이력이 반환됩니다.
     - 상담 이력의 경우, 리스트로 반환됩니다.
   1) 있을 경우
-    - 이름, 그리고 상담 이력을 리스트로 반환한다.
+      - 이름, 그리고 상담 이력을 리스트로 반환한다.
   2) 없을 경우
-    - 이름(알수없음), 비어있는 상담 이력 리스트를 반환한다.
+      - 이름(알수없음), 비어있는 상담 이력 리스트를 반환한다.
 - 상담 이력 저장
   - 환자 전화번호, 환자명, 환자 이메일, 관심 항목, 상담 내용, 상담사 번호를 매개변수로 받습니다.
   - 상담 이력이 저장됩니다.
@@ -30,12 +30,16 @@
   
 ### DB 확인 방법
 
+- http://pipecoding.dothome.co.kr/myadmin/index.php?route=/ 에 접속합니다.  
+- password를 입력합니다 (pwd : PIPE2023!)  
 <img width="1416" alt="로그인 화면" src="https://user-images.githubusercontent.com/43805087/228558359-0b2b5ff4-2efb-4cb9-b4e9-3ed96cdc3aa6.png">
-- http://pipecoding.dothome.co.kr/myadmin/index.php?route=/ 에 접속합니다.
+- pipecoding 스키마를 클릭합니다.  
 <img width="1425" alt="로그인 성공 화면" src="https://user-images.githubusercontent.com/43805087/228558404-71044be3-d279-4329-af21-7b6ff76c7592.png">
-- password를 입력합니다 (pwd : PIPE2023!)
+- 테이블을 눌러보며 데이터를 확인합니다.  
 <img width="721" alt="테이블 확인" src="https://user-images.githubusercontent.com/43805087/228558473-2e79eb3a-74ae-4216-b2db-7e8c1573d395.png">
-- pipecoding 스키마 안에 있는 테이블 3개를 클릭하며 정보가 추가되는 것을 확인합니다.
-  - CM_Member 테이블 : 상담사 테이블
-  - CM_Patient 테이블 : 환자 테이블
+
+### DB 테이블
+- pipecoding 스키마 안에 있는 테이블 3개를 클릭하며 정보가 추가되는 것을 확인합니다.  
+  - CM_Member 테이블 : 상담사 테이블  
+  - CM_Patient 테이블 : 환자 테이블  
   - CM_Patient_Consulting 테이블 : 환자 상담 이력 테이블
