@@ -13,7 +13,6 @@ public class SaveConsultationContentRequest extends StringRequest {
     [매개변수]
     Patient_HP : 환자 전화번호
     Patient : 환자명
-    Patient_idx : 환자 고유 id 값
     Patient_Email : 환자 이메일
     Favorites : 관심항목
     Contents : 상담 내용
