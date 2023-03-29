@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     private EditText patient_PH;
-    private EditText Patient_HP, Patient, Patient_idx, UserEmail, Favorites, Contents, Consultant_HP;
+    private EditText Patient_HP, Patient, UserEmail, Favorites, Contents, Consultant_HP;
     private Button getUserInfo, saveConsultationContent;
     private TextView result;
 
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
                             // 화면에 결과 보여줌 -> db에 담긴 내용은 myadmin에서 확인할 것
                             if (success) {
-                                result.setText("요청 성공"); // result textView에 보일 내용
+                                result.setText("요청 성공");
                             } else
                                 result.setText("요청 실패");
 

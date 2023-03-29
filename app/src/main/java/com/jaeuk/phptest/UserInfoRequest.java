@@ -34,7 +34,7 @@ public class UserInfoRequest extends StringRequest {
 
     [클라이언트에서 호출되어야할 url 예제]
     요청 : http://pipecoding.dothome.co.kr/getUserInfo.php
-    body : patient_PH=환자번호 , consultant_PH=상담사번호
+    body : patient_PH=환자번호
 
     특이사항 :
     1. 상담사번호는 DB에 미리 저장된 번호만 사용 가능합니다. 테스트 환경이니 여러분의 번호를 넣어주세요

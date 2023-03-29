@@ -28,7 +28,7 @@ public class SaveConsultationContentRequest extends StringRequest {
     위의 매개변수를 채워 상담 이력을 저장하는 파일이다.
 
     [클라이언트에서 호출되어야할 url 예제]
-    요청 : http://pipecoding.dothome.co.kr/getUserInfo.php
+    요청 : http://pipecoding.dothome.co.kr/saveConsultationContent.php
     body : 위의 매개변수
 
     특이사항 :
