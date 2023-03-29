@@ -39,7 +39,7 @@
 <img width="721" alt="테이블 확인" src="https://user-images.githubusercontent.com/43805087/228558473-2e79eb3a-74ae-4216-b2db-7e8c1573d395.png">
 
 ### DB 테이블
-- pipecoding 스키마 안에 있는 테이블 3개를 클릭하며 정보가 추가되는 것을 확인합니다.  
+- pipecoding 스키마 안에 있는 테이블 3개를 클릭하며  확인합니다.  
   - CM_Member 테이블 : 상담사 테이블  
   - CM_Patient 테이블 : 환자 테이블  
   - CM_Patient_Consulting 테이블 : 환자 상담 이력 테이블
